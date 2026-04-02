@@ -1,0 +1,19 @@
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql_${COMPOSE_PROJECT_NAME:-default}
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MY_PASS}
+      MYSQL_DATABASE: ${MY_DB}
+      MYSQL_USER: ${MY_USER}
+      MYSQL_PASSWORD: ${MY_PASS}
+    ports:
+      - "${MY_PORT}:3306"
+    volumes:
+      - ./data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MY_PASS}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
