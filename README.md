@@ -1,8 +1,8 @@
 # db-mysql
 
-MySQL 8 Docker container pré-configurado. Pronto pra usar, sem conflitos.
+MySQL 8 Docker container pre-configured. Ready to use, zero conflicts.
 
-## Uso rápido
+## Quick Start
 
 ```bash
 git clone https://github.com/Brazwed/db-mysql.git
@@ -10,21 +10,21 @@ cd db-mysql
 docker compose up -d
 ```
 
-## Conexão padrão
+## Default Connection
 
 ```
 Host:     localhost
-Porta:    3306
-Usuário:  mysql_user
-Senha:    mysql_dev_2026
-Banco:    devdb
+Port:     3306
+User:     mysql_user
+Pass:     mysql_dev_2026
+Database: devdb
 
 mysql -h localhost -P 3306 -u mysql_user -pmysql_dev_2026 devdb
 ```
 
-## Configuração
+## Configuration
 
-Edite `.env` (criado automaticamente de `.env.example`):
+Edit `.env` (created automatically from `.env.example`):
 
 ```env
 MY_USER=mysql_user
@@ -33,6 +33,6 @@ MY_DB=devdb
 MY_PORT=3306
 ```
 
-## Parte do Database Toolkit
+## Part of Database Toolkit
 
-Este repositório pode ser usado standalone ou junto com outros bancos via [Database](https://github.com/Brazwed/Database).
+This repo can be used standalone or with other databases via [Database Toolkit](https://github.com/Brazwed/Database).
